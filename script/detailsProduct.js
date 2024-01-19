@@ -33,7 +33,6 @@ fetch(urlPure + "/" + prodottoId, {
     prezzo.innerHTML = `€${prodottoInQuestione.price}`;
     immagine.src = `${prodottoInQuestione.imageUrl}`;
 
-    // TASTO DELETE
     const tastoCancellaProdotto = document.getElementById("cancellaProdotto");
     tastoCancellaProdotto.addEventListener("click", function () {
       fetch(urlPure + "/" + prodottoId, {
@@ -59,7 +58,6 @@ fetch(urlPure + "/" + prodottoId, {
         });
     });
 
-    // TASTO MODIFICA
     document
       .getElementById("tastoModifica")
       .setAttribute(

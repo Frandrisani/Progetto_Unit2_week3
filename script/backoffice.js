@@ -1,12 +1,3 @@
-// INIZIO SCRIPT COLLEGATO ALLA PAGINA BACKOFFICE. LA PAGINA IN QUESTIONE
-//AVRA' UNA TRIPLICE FUNZIONE: INSERIRE UN NUOVO PRODOTO (POST), MODIFICARE UN PRODOTTO GIA' INSERITO (POST), ELIMINARE UN PRODOTTO (DELETE)
-//COME FACCIAMO A CAMBIARE LA FUNZIONE DEL FORM UTILIZZANDO SOLO E SOLTANTO UN FORM? IN BASE ALL'ID DEL PRODOTTO, MI SPIEGO:
-//PIU' AVANTI VEDRETE COME IL MIO SCRIPT CONTROLLERA' L'URL DELLA PAGINA BACKOFFICE -> SE LA SUDDETTA PAGINA AVRA NEL SUO URL ANCHE L'ID DI UN PRODOTTO
-//GIA' PRESENTE NEL DATABASE (URL + ID), ALLORA IL FORM SARA' PREDISPOSTO AD UNA MODIFICA O L'ELIMINAZIONE DEL PRODOTTO. SE, INVECE, L'URL NON PORESENTE ID DI NESSUN PRODOTTO ALLORA
-// SIGNIFICA CHE IL FORM DOVRA' SICURAMENTE ESSERE UTILIZZATO PER UNA NUOVA AGGIUNTA DI PRODOTTO :)
-
-// ---- Prendiamo i vari elementi del form dalla pagina backOffice
-
 const nameInput = document.getElementById("nameInput");
 const descriptionInput = document.getElementById("descrizioneInput");
 const categoryInput = document.getElementById("categoriaInput");
@@ -14,7 +5,6 @@ const priceInput = document.getElementById("priceInput");
 const imgInput = document.getElementById("imgInput");
 const form = document.getElementById("formBackoffice");
 
-// ---- qui inseriamo in una costante l'url dell'api, faccio questo perchè a seconda della situazione andremo ad aggiungerci o meno l'id di un prodotto
 const urlPure = "https://striveschool-api.herokuapp.com/api/product/";
 
 const addressBarContent = new URLSearchParams(location.search);
@@ -91,10 +81,8 @@ form.addEventListener("submit", function (e) {
     .then((response) => {
       console.log(response);
       if (response.ok) {
-        //-------- MESSAGGIO DI OK SALAVATAGGIO
         alert("Prodotto salvato correttamente!");
 
-        // svuoto il form
         nameInput.value = "";
         descriptionInput.value = "";
         categoryInput.value = "";
