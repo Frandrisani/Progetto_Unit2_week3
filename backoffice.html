@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <!--* ------------------------------ INIZIO BODY -->
+  <body class="d-flex flex-column vh-100 bg-info-subtle">
+    <!--* ------------------------------ INIZIO HEADER -->
+    <header class="ms-5 mt-3">
+      <a class="text-decoration-none fs-2 text" href="./shop.html"
+        ><span><i class="bi bi-arrow-left"></i></span> Ritorna allo shop</a
+      >
+    </header>
+    <!--* ------------------------------ FINE HEADER -->
+
+    <!--* ------------------------------ INIZIO MAIN -->
+    <main class="flex-grow-1">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col col-12 col-md-8">
+            <h3>Benvenuti nella sezione ADMIN</h3>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col col-12 col-md-8">
+            <form class="bg-dark p-5 border rounded-4" id="formBackoffice">
+              <h3 id="testoFormVariabile" class="text-white mb-3">
+                Inserisci un nuovo prodotto all'interno del tuo store
+              </h3>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nameInput"
+                  placeholder="CupCake"
+                  required
+                />
+                <label for="floatingInput">Nome del prodotto</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="categoriaInput"
+                  placeholder="Pasticceria"
+                  required
+                />
+                <label for="floatingInput">Categoria del prodotto</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="Scrivi qui la descrizione del prodotto"
+                  id="descrizioneInput"
+                  style="height: 200px"
+                  required
+                ></textarea>
+                <label for="descriptionInput">Descrizione del prodotto</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="priceInput"
+                  placeholder="29"
+                  required
+                />
+                <label for="floatingInput">Prezzo del prodotto</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="imgInput"
+                  placeholder="https://....."
+                  required
+                />
+                <label for="floatingInput">Immagine prodotto</label>
+              </div>
+
+              <button type="submit" class="btn btn-success">
+                Carica prodotto
+              </button>
+              <button
+                type="button"
+                class="btn ms-3 btn-warning"
+                id="resetForm"
+                data-bs-toggle="modal"
+                data-bs-target="#resetModal"
+              >
+                Svuota il form
+              </button>
+            </form>
+          </div>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="resetModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Conferma azione
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Confermi di voler resettare il form?
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-bs-dismiss="modal"
+                  >
+                    No, torna indietro
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                    onclick="pulisci()"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--* ------------------------------ FINE MAIN -->
+
+    <!--* ------------------------------ INIZIO FOOTER -->
+    <footer class="bg-info-subtle">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--* ------------------------------ FINE FOOTER-->
+    <!--* ------------------------------ INIZIO SCRIPT SECTION -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script/backoffice.js"></script>
+    <!--* ------------------------------ FINE SCRIPT SECTION -->
+  </body>
+  <!--* ------------------------------ FINE BODY -->
+</html>

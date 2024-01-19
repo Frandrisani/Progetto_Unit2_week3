@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("./asset/Franco’s.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+main {
+  height: 100vh; /* Imposta l'altezza del main al 100% della viewport height */
+  display: flex;
+  align-items: center; /* Centra il contenuto verticalmente */
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  text-align: center;
+}
